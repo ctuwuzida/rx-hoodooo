@@ -1,8 +1,7 @@
 #labels Featured
-
 = RX项目组通讯录 =
 
-姓名         ID        电话	        EMAIL
+*姓名*   *ID*    *电话*      *EMAIL*
 
 林超	Hoodooo   15818697083	hoodooo914@hotmail.com
 
