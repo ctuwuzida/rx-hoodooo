@@ -1,40 +1,15 @@
 #summary One-sentence summary of this page.
 
-= Introduction =
+= RX项目组通讯录 =
 
-RX项目组通讯录
+姓名         ID        电话	        EMAIL
 
-= Details =
+林超	Hoodooo   15818697083	hoodooo914@hotmail.com
 
-{| class="wikitable" border="1"
-|-
-!  姓名
-!  ID
-!  电话
-!  EMAIL
-|-
-|  林超
-|  Hoodoo
-|  15818697083
-|  hoodooo914@hotmail.com
-|-
-|  喻隆
-|  Fidra
-|  13714079808
-|  fdtristan@gmail.com
-|-
-|  杨麟
-|  Fidra
-|  13924634061
-|  oxcsnicho@@gmail.com
-|-
-|  叶润桂
-|  Netqoo
-|  13632413604
-|  
-|-
-|  黄靖
-|  黄靖
-|  
-|  
-|}
+喻隆	Fidra     13714079808	fdtristan@gmail.com
+
+叶润桂	Netqoo    13632413604	--
+
+杨麟	--        13924634061	oxcsnicho@gmail.com
+
+黄靖	Robot     N/A           --	
