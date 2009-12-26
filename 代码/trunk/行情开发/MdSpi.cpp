@@ -1,5 +1,6 @@
-#include "MdSpi.h"
+
 #include <iostream>
+#include "MdSpi.h"
 using namespace std;
 
 #pragma warning(disable : 4996)
