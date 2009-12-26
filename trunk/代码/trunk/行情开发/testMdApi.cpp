@@ -4,7 +4,7 @@
 #include "stdafx.h"
 #include <assert.h>
 #include <signal.h>
-#include "ThostFtdcMdApi.h"
+
 #include "MdSpi.h"
 
 // 配置参数
@@ -14,9 +14,6 @@ TThostFtdcInvestorIDType INVESTOR_ID = "81531";			// 投资者代码
 TThostFtdcPasswordType  PASSWORD = "888888";			// 用户密码
 char *ppInstrumentID[] = {"cu0912", "cu1001"};			// 行情订阅列表
 int iInstrumentID = 2;									// 行情订阅数量
-
-
-
 
 // UserApi对象
 CThostFtdcMdApi* g_pUserApi = NULL;
@@ -28,8 +25,10 @@ CThostFtdcMdSpi* g_pUserSpi = NULL;
 int g_nRequestID = 0;
 
 
+#define MD_FLOWPATH ".\\MdFlowDir"
 
-void SignalSIGINTHandler(int signal)
+//Ctrl+C消息处理
+static void _signalsiginthandler(int signal)
 {
 	if (SIGINT==signal)
 	{
@@ -45,7 +44,7 @@ void SignalSIGINTHandler(int signal)
 void main(void)
 {
 	// 初始化UserApi
-	g_pUserApi = CThostFtdcMdApi::CreateFtdcMdApi();			// 创建UserApi
+	g_pUserApi = CThostFtdcMdApi::CreateFtdcMdApi(MD_FLOWPATH);			// 创建UserApi
 	g_pUserSpi = new CMdSpi();
 
 	assert(NULL!=g_pUserApi);
@@ -56,13 +55,12 @@ void main(void)
 	g_pUserApi->Init();
 
 	_tprintf(_T("Ctrl + C exit process!\n"));
-	signal(SIGINT, SignalSIGINTHandler);
+	signal(SIGINT, _signalsiginthandler);
 
 	g_pUserApi->Join();//wait Ctrl + C to run SignalSIGINTHandler()
 
 	//while g_pUserApi->Release() called!
 	g_pUserApi = NULL;
-
 	delete g_pUserSpi;
 	g_pUserSpi = NULL;
 }
