@@ -1,0 +1,1 @@
+A platform providing interface for user to make feature exchange automatically via program and instructions. It uses Matlab to analyse the data and provides instructions of exchange.
